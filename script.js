@@ -1,6 +1,7 @@
 const balls = document.querySelectorAll('.ball');
 const guessAnswer = document.getElementById('answer');
 const scoreBoard = document.getElementById('score');
+const resetBtn = document.getElementById('reset-game');
 
 function randomColor() {
   const r = Math.random() * 255;
@@ -36,3 +37,8 @@ function checkAnswer() {
 }
 
 checkAnswer();
+
+resetBtn.addEventListener('click', () => {
+  assignRandomPalette();
+  guessAnswer.innerHTML = 'Escolha uma cor';
+});
